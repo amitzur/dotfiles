@@ -34,7 +34,12 @@
 
     # Find out who is currently active on the repository
     # Displays committers in descending order of number of commits
-    who = shortlog --numbered --summary --email --no-merges --since="3 months"
+    who = shortlog --numbered --summary --email --no-merges --since='3 months'
+
+    st = status
+    co = checkout
+    df = diff
+    cp = cherry-pick
 
 [color]
     # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white
