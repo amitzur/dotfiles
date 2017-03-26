@@ -62,7 +62,7 @@ prompt_git() {
 
 function parse_git_dirty {
 
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
 
 }
 
@@ -144,7 +144,7 @@ set_prompts() {
     PS1+="\[$hostStyle\]\#" # host
     PS1+="\[$reset$white\]: "
     PS1+="\[$green\]\w" # working directory
-    PS1+="\[$cyan\] \$(parse_git_branch)" # git repository details
+    PS1+="\$(prompt_git \"$white on $cyan\")" # git repository details
     PS1+="\[$reset$white\]\$ \[$reset\]" # $ (and reset color)
 
     export PS1
